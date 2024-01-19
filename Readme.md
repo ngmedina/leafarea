@@ -4,7 +4,7 @@ Este tutorial funciona cuando hay una hoja por foto. Si tienes fotos con más de
 Descargar imageJ-Fiji  https://imagej.net/software/fiji/downloads
 1.	Abrir imagen
 2.	Abrir el Roi Manager
- 
+ ![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
 3.	Añadir el cuadrado (roi) al Roi Manager pinchando “Add[]”
  
 4.	Guardar el roi, para ello primero seleccionar el roi que queremos guardar en el Roi Manager, después pinchar en “More > save” 
