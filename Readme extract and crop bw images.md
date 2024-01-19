@@ -1,4 +1,4 @@
-Tutorial modificación hojas
+Tutorial extraer y recortar imagenes
 
 Este tutorial funciona cuando hay una hoja por foto. Si tienes fotos con más de una hoja que necesites procesar necesitas cortarlas primero.
 Descargar imageJ-Fiji  https://imagej.net/software/fiji/downloads
