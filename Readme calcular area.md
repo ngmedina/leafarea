@@ -1,1 +1,1 @@
-En construcción. Este tutorial se subirá proximamente
+En construcción. Este tutorial se subirá próximamente
