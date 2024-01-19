@@ -1,6 +1,6 @@
 Tutorial modificación hojas
 
-Este tutorial funciona cuando hay una hoja por foto. Si tienes fotos con más de una hoja que necesites procesar necesitaremos cortarlas primero.
+Este tutorial funciona cuando hay una hoja por foto. Si tienes fotos con más de una hoja que necesites procesar necesitas cortarlas primero.
 Descargar imageJ-Fiji  https://imagej.net/software/fiji/downloads
 1.	Abrir imagen
 2.	Abrir el Roi Manager
