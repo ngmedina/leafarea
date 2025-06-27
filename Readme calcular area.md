@@ -38,7 +38,7 @@ Organiza tu proyecto con las siguientes carpetas:
    ![Guardar ROI en carpeta](img/Imagen4.png?raw=true "Guardar en carpeta")
 
 ### 7. **Cerrar la imagen**  
-   ![Cerrar imagen](img/Imagen5.png?raw=true "Cerrar imagen")
+ 
 
 ## 🧪 Ejecutar el macro
 
