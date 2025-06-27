@@ -46,6 +46,59 @@ Organiza tu proyecto con las siguientes carpetas:
     
    👉 [Descargar aquí](https://github.com/ngmedina/leafarea/blob/main/calculate%20area_Hoja_v5.ijm)
 
+# 🧪 Cambiar el valor de escala para usar el macro
+
+Cuando usas una regla o referencia en la imagen (como una regla con centímetros), puedes convertir los píxeles a unidades reales (como centímetros) usando esta función del macro:
+
+```ijm
+run("Set Scale...", "distance=66.0034 known=1 pixel=1 unit=cm");
+```
+
+Esta línea le dice a Fiji: “66.0034 píxeles equivalen a 1 cm”.
+
+## ⚙️ ¿Cómo obtengo ese número de píxeles?
+
+Sigue estos pasos para calcularlo:
+
+---
+
+### 1. Abrir una imagen que tenga una escala (como una regla)
+Asegúrate de que haya un segmento cuya longitud real conozcas (por ejemplo, 1 cm de una regla visible en la imagen).
+
+---
+
+### 2. Usar la herramienta de línea recta
+Selecciona la herramienta de línea (botón de línea en la barra de herramientas) y traza una línea exactamente sobre el segmento de longitud conocida (por ejemplo, de 0 a 1 cm en la regla).
+
+---
+
+### 3. Medir la longitud en píxeles
+Ve a `Analyze > Measure` o pulsa `Ctrl+M` para ver cuántos píxeles mide esa línea.  
+→ Mira el valor de “Length” en la ventana de resultados.  
+💡 Ejemplo: si mide **66.0034** píxeles y representa **1 cm**, ese es el valor que debes usar.
+
+---
+
+### 4. Aplicar esa escala manualmente (opcional)
+Puedes ir a `Analyze > Set Scale…` y rellenar así:
+
+- **Distance in pixels**: 66.0034  
+- **Known distance**: 1  
+- **Unit of length**: cm  
+- Marca “Global” si quieres que se aplique a todas las imágenes abiertas  
+- Haz clic en “OK”
+
+---
+
+### 5. Actualizar tu macro
+Sustituye el valor en tu macro con el número de píxeles que has medido. Ejemplo:
+
+```ijm
+run("Set Scale...", "distance=66.0034 known=1 pixel=1 unit=cm");
+```
+
+⚠️ **Recuerda:** Este valor puede cambiar entre sesiones o cámaras, así que debes repetir este proceso cada vez que cambie la fuente de las imágenes.
+
 13. Ir a: `File > Plugins > Macros > Run`  
    ![Run macro](img/Imagen8.png?raw=true "Ejecutar macro")
 
