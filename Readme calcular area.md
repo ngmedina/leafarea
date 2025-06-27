@@ -42,86 +42,27 @@ Organiza tu proyecto con las siguientes carpetas:
 
 ## 🧪 Ejecutar el macro
 
-12. Descargar el macro de aquí: 
-8. Ir a: `File > Plugins > Macros > Run`  
+12. Descargar el macro:
+   👉 [Descargar aquí](https://github.com/ngmedina/leafarea/blob/main/calculate%20area_Hoja_v5.ijm)
+
+13. Ir a: `File > Plugins > Macros > Run`  
    ![Run macro](img/Imagen8.png?raw=true "Ejecutar macro")
 
-9. Seleccionar el archivo `.ijm` del macro  
+14. Seleccionar el archivo `.ijm` del macro  
    ![Seleccionar macro](img/Imagen9.png?raw=true "Seleccionar macro")
 
-10. Aparecerán ventanas para elegir:
+15. Aparecerán ventanas para elegir:
     - **Carpeta de imágenes** (`/images/`)
     - **Carpeta de ROI** (`/roi/`)
     - **Carpeta de salida** (`/tif/`)
 
-## 🧠 ¿Qué hace el macro?
+## ¿Qué hace el macro?
 
 - Carga el ROI una sola vez
 - Aplica umbral automático (`Intermodes`) a la banda azul de la imagen
 - Mide partículas dentro del ROI
 - Guarda la imagen binaria umbralizada en `/tif/`
 - Los resultados aparecen en la ventana `Results` (puedes guardarlos manualmente)
-
-## Código del macro
-
-```java
-macro "Batch Measure DTI [F6]" {
-    run("Set Measurements...", "area mean standard limit display redirect=None decimal=3");
-
-    dir1 = getDirectory("Choose Source Directory");  // imágenes
-    dir2 = getDirectory("Choose ROI Directory");     // ROI
-    dir3 = getDirectory("Choose Output Directory");  // salida
-
-    setBatchMode(false);
-
-    list = getFileList(dir1);
-    list2 = getFileList(dir2);
-
-    // Cargar ROI una sola vez
-    roiPath = dir2 + list2[0];
-    if (!endsWith(roiPath, "/")) {
-        roiManager("reset");
-        roiManager("Open", roiPath);
-    }
-
-    for (i = 0; i < list.length; i++) {
-        path = dir1 + list[i];
-        showProgress(i, list.length);
-        if (!endsWith(path, "/")) open(path);
-
-        if (nImages >= 1) {
-            run("Set Scale...", "distance=66.0034 known=1 pixel=1 unit=cm");
-
-            run("RGB Color");
-            run("RGB Stack");
-            run("Stack to Images");
-            selectWindow("Green"); close();
-            selectWindow("Red"); close();
-            selectWindow("Blue");
-            rename(list[i]);
-
-            run("Auto Threshold", "method=Intermodes white");
-            setAutoThreshold("Default");
-
-            for (j = 0; j < roiManager("count"); j++) {
-                roiManager("select", j);
-                run("Analyze Particles...", "size=1-Infinity clear summarize");
-            }
-
-            roiManager("deselect");
-
-            selectWindow(list[i]);
-            saveAs("Tiff", dir3 + list[i]);
-            close();
-
-            if (isOpen("Exception")) {
-                selectWindow("Exception");
-                run("Close");
-            }
-        }
-    }
-}
-```
 
 ## Guardar resultados
 
