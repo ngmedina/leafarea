@@ -1,4 +1,4 @@
-# Batch Measure DTI – Fiji Macro
+# # Medición por lotes de área de la hoja – Macro de Fiji
 
 Este tutorial te permite medir automáticamente el área de hojas en múltiples imágenes utilizando un único ROI (Región de Interés). Funciona correctamente **cuando hay una hoja por imagen**. Si hay más de una hoja por foto, puedes **recortarlas previamente** o ejecutar el macro tantas veces como hojas tengas cada vez con un roi diferente.
 
@@ -43,6 +43,7 @@ Organiza tu proyecto con las siguientes carpetas:
 ## 🧪 Ejecutar el macro
 
 12. Descargar el macro:
+    
    👉 [Descargar aquí](https://github.com/ngmedina/leafarea/blob/main/calculate%20area_Hoja_v5.ijm)
 
 13. Ir a: `File > Plugins > Macros > Run`  
