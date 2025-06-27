@@ -1,13 +1,13 @@
-# 📐 Batch Measure DTI – Fiji Macro
+# Batch Measure DTI – Fiji Macro
 
 Este tutorial te permite medir automáticamente el área de hojas en múltiples imágenes utilizando un único ROI (Región de Interés). Funciona correctamente **cuando hay una hoja por imagen**. Si hay más de una hoja por foto, puedes **recortarlas previamente** o ejecutar el macro tantas veces como hojas tengas cada vez con un roi diferente.
 
-## 🧩 Requisitos
+## Requisitos
 
 - **Fiji / ImageJ** instalado:  
   👉 [Descargar aquí](https://imagej.net/software/fiji/downloads)
 
-## 🧰 Preparación inicial
+## Preparación inicial
 
 Organiza tu proyecto con las siguientes carpetas:
 
@@ -17,27 +17,32 @@ Organiza tu proyecto con las siguientes carpetas:
 /tif/      → Salida de imágenes procesadas
 ```
 
-## 🖼️ Crear y guardar el ROI
+## Crear y guardar el ROI
 
 1. **Abrir imagen** en Fiji  
-2. Abrir el **ROI Manager**:  
+2. Abrir el **ROI Manager**:
+   
    ![ROI Manager](img/Imagen1.png?raw=true "Abrir ROI Manager")
 
-3. Dibujar un recuadro (ROI) y hacer clic en **Add[]**:  
+4. Dibujar un recuadro (ROI) y hacer clic en **Add[]**:
+    
    ![Add ROI](img/Imagen2.png?raw=true "Añadir ROI")
 
-4. Seleccionar el ROI en el ROI Manager  
-5. Guardar el ROI: `More > Save`  
+6. Seleccionar el ROI en el ROI Manager  
+7. Guardar el ROI: `More > Save`
+   
    ![Guardar ROI](img/Imagen3.png?raw=true "Guardar ROI")
 
-6. Guardar el ROI en la carpeta `/roi/` con cualquier nombre (ej. `zona_cristal.roi`)  
+9. Guardar el ROI en la carpeta `/roi/` con cualquier nombre (ej. `zona_cristal.roi`)
+    
    ![Guardar ROI en carpeta](img/Imagen4.png?raw=true "Guardar en carpeta")
 
-7. **Cerrar la imagen**  
+11. **Cerrar la imagen**  
    ![Cerrar imagen](img/Imagen5.png?raw=true "Cerrar imagen")
 
 ## 🧪 Ejecutar el macro
 
+12. Descargar el macro de aquí: 
 8. Ir a: `File > Plugins > Macros > Run`  
    ![Run macro](img/Imagen8.png?raw=true "Ejecutar macro")
 
@@ -57,7 +62,7 @@ Organiza tu proyecto con las siguientes carpetas:
 - Guarda la imagen binaria umbralizada en `/tif/`
 - Los resultados aparecen en la ventana `Results` (puedes guardarlos manualmente)
 
-## 🧬 Código del macro
+## Código del macro
 
 ```java
 macro "Batch Measure DTI [F6]" {
@@ -118,12 +123,12 @@ macro "Batch Measure DTI [F6]" {
 }
 ```
 
-## 📊 Guardar resultados
+## Guardar resultados
 
 - Ve a la ventana `Results`
 - Haz clic en `File > Save As…` y guarda los resultados como `.csv` o `.xls`
 
-## ✅ Notas adicionales
+## Notas adicionales
 
 - Puedes cambiar el método de umbral (`Intermodes`) por otro como `Otsu`, `Yen`, etc.
 - Asegúrate de ajustar la escala si usas otra regla de referencia.
